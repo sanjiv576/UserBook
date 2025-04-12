@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'features/presentation/view/home_screen.dart';
+
+import 'features/presentation/view/home_view.dart';
 
 class AppView extends ConsumerWidget {
   const AppView({super.key});
@@ -10,7 +11,7 @@ class AppView extends ConsumerWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
-      routes: {'/': (context) => HomeScreen()},
+      routes: {'/': (context) => HomeView()},
     );
   }
 }

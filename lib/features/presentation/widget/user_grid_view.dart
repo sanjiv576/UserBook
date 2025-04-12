@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+
 import '../../domain/entity/user_entity.dart';
 import 'user_thumbnail_view.dart';
 

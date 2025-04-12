@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import '../state/all_users_provider.dart';
+import '../providers/all_users_provider.dart';
 import '../widget/user_grid_view.dart';
 
-class HomeScreen extends StatefulHookConsumerWidget {
-  const HomeScreen({super.key});
+class HomeView extends StatefulHookConsumerWidget {
+  const HomeView({super.key});
 
   @override
-  ConsumerState<ConsumerStatefulWidget> createState() => _HomeScreenState();
+  ConsumerState<ConsumerStatefulWidget> createState() => _HomeViewState();
 }
 
-class _HomeScreenState extends ConsumerState<HomeScreen> {
+class _HomeViewState extends ConsumerState<HomeView> {
   @override
   Widget build(BuildContext context) {
     final users = ref.watch(allUsersProvider);
     return Scaffold(
+      appBar: AppBar(title: Text('All Users'), centerTitle: true),
       backgroundColor: Theme.of(context).colorScheme.surface,
       body: SafeArea(
         child: users.when(

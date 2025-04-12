@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import '../view/profile_view.dart';
 import '../../domain/entity/user_entity.dart';
 
 class UserThumbnailView extends StatelessWidget {
@@ -13,6 +14,12 @@ class UserThumbnailView extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         log('Tapped: ${singleUser.id}');
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => ProfileView(userId: singleUser.id),
+          ),
+        );
       },
       child: Column(
         spacing: 12,
